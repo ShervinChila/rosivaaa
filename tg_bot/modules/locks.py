@@ -158,19 +158,19 @@ def unlock(bot: Bot, update: Update, args: List[str]) -> str:
                 sql.update_restriction(chat.id, args[0], locked=False)
                 """
                 members = users_sql.get_chat_members(chat.id)
-                if args[0] == "messages":
+                if args[0] == "پیام":
                     unrestr_members(bot, chat.id, members, media=False, other=False, previews=False)
 
-                elif args[0] == "media":
+                elif args[0] == "رسانه":
                     unrestr_members(bot, chat.id, members, other=False, previews=False)
 
-                elif args[0] == "other":
+                elif args[0] == "دیگر":
                     unrestr_members(bot, chat.id, members, previews=False)
 
-                elif args[0] == "previews":
+                elif args[0] == "نمایش":
                     unrestr_members(bot, chat.id, members)
 
-                elif args[0] == "all":
+                elif args[0] == "گپ":
                     unrestr_members(bot, chat.id, members, True, True, True, True)
                 """
                 message.reply_text("Unlocked {} for everyone!".format(args[0]))
@@ -245,27 +245,27 @@ def build_lock_message(chat_id):
     else:
         res = "These are the locks in this chat:"
         if locks:
-            res += "\n - sticker = `{}`" \
-                   "\n - audio = `{}`" \
-                   "\n - voice = `{}`" \
-                   "\n - document = `{}`" \
-                   "\n - video = `{}`" \
-                   "\n - contact = `{}`" \
-                   "\n - photo = `{}`" \
-                   "\n - gif = `{}`" \
-                   "\n - url = `{}`" \
-                   "\n - bots = `{}`" \
-                   "\n - forward = `{}`" \
-                   "\n - game = `{}`" \
-                   "\n - location = `{}`".format(locks.sticker, locks.audio, locks.voice, locks.document,
+            res += "\n - استیکر = `{}`" \
+                   "\n - موزیک = `{}`" \
+                   "\n - ویس = `{}`" \
+                   "\n - اسناد = `{}`" \
+                   "\n - ویدیو = `{}`" \
+                   "\n - مخاطب = `{}`" \
+                   "\n - عکس = `{}`" \
+                   "\n - گیف = `{}`" \
+                   "\n - لینک = `{}`" \
+                   "\n - ربات = `{}`" \
+                   "\n - فوروارد = `{}`" \
+                   "\n - بازی = `{}`" \
+                   "\n - لوکیشن = `{}`".format(locks.sticker, locks.audio, locks.voice, locks.document,
                                                  locks.video, locks.contact, locks.photo, locks.gif, locks.url,
                                                  locks.bots, locks.forward, locks.game, locks.location)
         if restr:
-            res += "\n - messages = `{}`" \
-                   "\n - media = `{}`" \
-                   "\n - other = `{}`" \
-                   "\n - previews = `{}`" \
-                   "\n - all = `{}`".format(restr.messages, restr.media, restr.other, restr.preview,
+            res += "\n - پیام = `{}`" \
+                   "\n - رسانه = `{}`" \
+                   "\n - دیگر = `{}`" \
+                   "\n - نمایش = `{}`" \
+                   "\n - گپ = `{}`".format(restr.messages, restr.media, restr.other, restr.preview,
                                             all([restr.messages, restr.media, restr.other, restr.preview]))
     return res
 
