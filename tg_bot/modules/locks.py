@@ -158,19 +158,19 @@ def unlock(bot: Bot, update: Update, args: List[str]) -> str:
                 sql.update_restriction(chat.id, args[0], locked=False)
                 """
                 members = users_sql.get_chat_members(chat.id)
-                if args[0] == "پیام":
+                if args[0] == "messages":
                     unrestr_members(bot, chat.id, members, media=False, other=False, previews=False)
 
-                elif args[0] == "رسانه":
+                elif args[0] == "media":
                     unrestr_members(bot, chat.id, members, other=False, previews=False)
 
-                elif args[0] == "دیگر":
+                elif args[0] == "other":
                     unrestr_members(bot, chat.id, members, previews=False)
 
-                elif args[0] == "نمایش":
+                elif args[0] == "previews":
                     unrestr_members(bot, chat.id, members)
 
-                elif args[0] == "گپ":
+                elif args[0] == "all":
                     unrestr_members(bot, chat.id, members, True, True, True, True)
                 """
                 message.reply_text("Unlocked {} for everyone!".format(args[0]))
