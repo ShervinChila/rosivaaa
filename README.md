@@ -59,13 +59,13 @@ from tg_bot.sample_config import Config
 
 
 class Development(Config):
-    OWNER_ID = 254318997  # my telegram ID
-    OWNER_USERNAME = "SonOfLars"  # my telegram username
-    API_KEY = "your bot api key"  # my api key, as provided by the botfather
-    SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost:5432/database'  # sample db credentials
+    OWNER_ID = 460344857  # my telegram ID
+    OWNER_USERNAME = "CrowdShot"  # my telegram username
+    API_KEY = "5568097737"  # my api key, as provided by the botfather
+    SQLALCHEMY_DATABASE_URI = 'sqldbtype://username:pw@hostname:port/db_name'  # sample db credentials
     MESSAGE_DUMP = '-1234567890' # some group chat that your bot is a member of
     USE_MESSAGE_DUMP = True
-    SUDO_USERS = [18673980, 83489514]  # List of id's for users which have sudo access to the bot.
+    SUDO_USERS = [460344857]  # List of id's for users which have sudo access to the bot.
     LOAD = []
     NO_LOAD = ['translation']
 ```
@@ -75,10 +75,10 @@ The following env variables are supported:
  - `ENV`: Setting this to ANYTHING will enable env variables
 
  - `TOKEN`: Your bot token, as a string.
- - `OWNER_ID`: An integer of consisting of your owner ID
+ - `OWNER_ID`: 460344857
  - `OWNER_USERNAME`: Your username
 
- - `DATABASE_URL`: Your database URL
+ - `DATABASE_URL`: mongodb+srv://shervin:3208923805@cluster0.bpxfppk.mongodb.net/?retryWrites=true&w=majority
  - `MESSAGE_DUMP`: optional: a chat where your replied saved messages are stored, to stop people deleting their old 
  - `LOAD`: Space separated list of modules you would like to load
  - `NO_LOAD`: Space separated list of modules you would like NOT to load
